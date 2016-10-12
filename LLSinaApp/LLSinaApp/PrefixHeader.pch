@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  LLSinaApp
+//
+//  Created by Leo on 10/12/16.
+//  Copyright © 2016 Leo. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//随机色
+
+#define HMColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+#define HMRandomColor HMColor((arc4random_uniform(256)),(arc4random_uniform(256)),(arc4random_uniform(256)))
+
+#endif /* PrefixHeader_pch */
+
