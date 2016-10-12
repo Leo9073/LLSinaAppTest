@@ -47,7 +47,6 @@
     return YES;
 }
 
-
 //抽取重复代码到一个方法中：相同的代码放到方法中，不同的当作参数传递
 - (void)addChildVc:(UIViewController *)childVc WithTitle:(NSString *)title withImage:(NSString *)image withSelectedImage:(NSString *)selectedImage {
     
