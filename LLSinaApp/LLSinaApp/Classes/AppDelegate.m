@@ -48,6 +48,15 @@
 }
 
 //抽取重复代码到一个方法中：相同的代码放到方法中，不同的当作参数传递
+
+/**
+ *  抽取方法
+ *
+ *  @param childVc       控制器
+ *  @param title         导航栏标题
+ *  @param image         不选中图片
+ *  @param selectedImage 选中图片
+ */
 - (void)addChildVc:(UIViewController *)childVc WithTitle:(NSString *)title withImage:(NSString *)image withSelectedImage:(NSString *)selectedImage {
     
     //设置子控制器的文字和图片
