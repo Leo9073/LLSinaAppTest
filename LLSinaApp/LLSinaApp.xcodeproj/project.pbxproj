@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3F03D581DAFA7DD0002ABA6 /* HWTabbBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F03D571DAFA7DD0002ABA6 /* HWTabbBarViewController.m */; };
 		B3FF4F631DAE61470083809C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FF4F621DAE61470083809C /* Assets.xcassets */; };
 		B3FF4F661DAE61470083809C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FF4F641DAE61470083809C /* LaunchScreen.storyboard */; };
 		B3FF4F711DAE61470083809C /* LLSinaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF4F701DAE61470083809C /* LLSinaAppTests.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B3F03D561DAFA7DD0002ABA6 /* HWTabbBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTabbBarViewController.h; sourceTree = "<group>"; };
+		B3F03D571DAFA7DD0002ABA6 /* HWTabbBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTabbBarViewController.m; sourceTree = "<group>"; };
 		B3FF4F531DAE61470083809C /* LLSinaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLSinaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF4F621DAE61470083809C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3FF4F651DAE61470083809C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				B3FF4F971DAE80600083809C /* HWDiscoverViewController.m */,
 				B3FF4F991DAE807B0083809C /* HWProfileViewController.h */,
 				B3FF4F9A1DAE807B0083809C /* HWProfileViewController.m */,
+				B3F03D561DAFA7DD0002ABA6 /* HWTabbBarViewController.h */,
+				B3F03D571DAFA7DD0002ABA6 /* HWTabbBarViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 			files = (
 				B3FF4F921DAE80210083809C /* HWHomeViewController.m in Sources */,
 				B3FF4F9B1DAE807B0083809C /* HWProfileViewController.m in Sources */,
+				B3F03D581DAFA7DD0002ABA6 /* HWTabbBarViewController.m in Sources */,
 				B3FF4F8E1DAE68810083809C /* main.m in Sources */,
 				B3FF4F951DAE804B0083809C /* HWMessageCenterViewController.m in Sources */,
 				B3FF4F981DAE80600083809C /* HWDiscoverViewController.m in Sources */,
@@ -514,6 +520,7 @@
 				B3FF4F821DAE61470083809C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3FF4F831DAE61470083809C /* Build configuration list for PBXNativeTarget "LLSinaAppTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +529,7 @@
 				B3FF4F851DAE61470083809C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3FF4F861DAE61470083809C /* Build configuration list for PBXNativeTarget "LLSinaAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +538,7 @@
 				B3FF4F881DAE61470083809C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
