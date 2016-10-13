@@ -7,6 +7,7 @@
 //
 
 #import "HWMessageCenterViewController.h"
+#import "HWTest1ViewController.h"
 
 @interface HWMessageCenterViewController ()
 
@@ -31,25 +32,31 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 20;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    static NSString *ID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"test_message-%ld",indexPath.row];
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    HWTest1ViewController *test1 = [[HWTest1ViewController alloc]init];
+    test1.title = @"消息";
+    //当test1控制器被push的时候，test1所在的tabbarcontroller的tabbar会消失
+    //当test1控制器被pop的时候，test1所在的tabbarcontroller的tabbar会自动显示
+    [self.navigationController pushViewController:test1 animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.

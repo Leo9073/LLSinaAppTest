@@ -11,6 +11,7 @@
 #import "HWMessageCenterViewController.h"
 #import "HWDiscoverViewController.h"
 #import "HWProfileViewController.h"
+#import "HWNavigationController.h"
 
 @interface HWTabbBarViewController ()
 
@@ -49,15 +50,21 @@
 - (void)addChildVc:(UIViewController *)childVc WithTitle:(NSString *)title withImage:(NSString *)image withSelectedImage:(NSString *)selectedImage {
     
     //设置子控制器的文字和图片
-    childVc.tabBarItem.title = title;
+//    childVc.tabBarItem.title = title; //设置tabbar文字
+//    childVc.navigationItem.title = title; //设置navigationbar文字
+    childVc.title = title; //同时设置tabbar和navigationbar的文字
     [childVc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:HMColor(123, 123, 123)} forState:UIControlStateNormal];
     [childVc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor orangeColor]} forState:UIControlStateSelected];
+    
+    //设置子控制器的图片
     childVc.tabBarItem.image = [UIImage imageNamed:image];
     childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childVc.view.backgroundColor = HMRandomColor;
     
+    //添加导航控制器
+    HWNavigationController *nav = [[HWNavigationController alloc]initWithRootViewController:childVc];
     //添加为子控制器
-    [self addChildViewController:childVc];
+    [self addChildViewController:nav];
 }
 
 - (void)didReceiveMemoryWarning {

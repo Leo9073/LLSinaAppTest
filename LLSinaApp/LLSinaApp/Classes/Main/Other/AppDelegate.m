@@ -7,10 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "HWHomeViewController.h"
-#import "HWMessageCenterViewController.h"
-#import "HWDiscoverViewController.h"
-#import "HWProfileViewController.h"
 #import "HWTabbBarViewController.h"
 
 @interface AppDelegate ()

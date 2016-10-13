@@ -17,12 +17,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //设置左边返回按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self withAction:@selector(friendsearch) withImage:@"navigationbar_friendsearch" withHighlightedImage:@"navigationbar_friendsearch_highlighted"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //设置右边更多按钮
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self withAction:@selector(pop) withImage:@"navigationbar_pop" withHighlightedImage:@"navigationbar_pop_highlighted"];
 }
+
+//方法重构,避免重复代码太多
+/**
+ *  创建一个item
+ *
+ *  @param action           点击item后调用的方法
+ *  @param image            图片
+ *  @param highlightedImage 高亮图片
+ *
+ *  @return 创建完的item
+ */
+//- (UIBarButtonItem *)itemWithAction:(SEL)action withImage:(NSString *)image withHighlightedImage:(NSString *)highlightedImage {
+//    
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+//    [btn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+//    [btn setBackgroundImage:[UIImage imageNamed:highlightedImage] forState:UIControlStateHighlighted];
+//    //设置尺寸
+//    btn.size = btn.currentBackgroundImage.size;
+//    return [[UIBarButtonItem alloc] initWithCustomView:btn];
+//}
+
+
+- (void)friendsearch {
+    
+    NSLog(@"friendsearch");
+}
+
+- (void)pop {
+    
+    NSLog(@"pop");
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
