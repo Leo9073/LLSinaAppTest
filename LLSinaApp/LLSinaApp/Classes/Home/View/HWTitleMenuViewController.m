@@ -1,28 +1,27 @@
 //
-//  HWDiscoverViewController.m
+//  HWTitleMenuViewController.m
 //  LLSinaApp
 //
-//  Created by Leo on 10/12/16.
+//  Created by Leo on 10/14/16.
 //  Copyright © 2016 Leo. All rights reserved.
 //
 
-#import "HWDiscoverViewController.h"
-#import "HWSearchBar.h"
+#import "HWTitleMenuViewController.h"
 
-@interface HWDiscoverViewController ()
+@interface HWTitleMenuViewController ()
 
 @end
 
-@implementation HWDiscoverViewController
+@implementation HWTitleMenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    HWSearchBar *searchBar = [HWSearchBar searchBar];
-    searchBar.height = 35;
-    searchBar.width = 360;
-    self.navigationItem.titleView = searchBar;
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,25 +31,32 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    
+    return 3;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    static NSString *ID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"好友";
+    } else if (indexPath.row == 1) {
+        cell.textLabel.text = @"密友";
+    } else if (indexPath.row == 2) {
+        cell.textLabel.text = @"基友";
+    }
+    
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

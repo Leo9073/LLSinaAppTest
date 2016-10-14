@@ -18,12 +18,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"写私信" style:UIBarButtonItemStylePlain target:self action:@selector(composeMsg)];
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
+
+- (void)composeMsg {
+    
+    NSLog(@"composeMsg");
+}
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    
+//    //在view即将显示设置
+//    [super viewWillAppear:animated];
+//    
+//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

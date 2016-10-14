@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B392D7561DB0C41C00187E84 /* HWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D7551DB0C41C00187E84 /* HWSearchBar.m */; };
+		B392D7591DB0D54100187E84 /* HWDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D7581DB0D54100187E84 /* HWDropdownMenu.m */; };
+		B392D75F1DB0E23800187E84 /* HWTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D75E1DB0E23800187E84 /* HWTitleMenuViewController.m */; };
+		B392D7621DB10FC300187E84 /* HWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D7611DB10FC300187E84 /* HWTabBar.m */; };
 		B3AD9FE91DAFD9D600ACCF30 /* HWDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD9FBA1DAFD9D600ACCF30 /* HWDiscoverViewController.m */; };
 		B3AD9FEA1DAFD9D600ACCF30 /* HWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD9FC01DAFD9D600ACCF30 /* HWHomeViewController.m */; };
 		B3AD9FEB1DAFD9D600ACCF30 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD9FC61DAFD9D600ACCF30 /* UIView+Extension.m */; };
@@ -48,6 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B392D7541DB0C41C00187E84 /* HWSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSearchBar.h; sourceTree = "<group>"; };
+		B392D7551DB0C41C00187E84 /* HWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSearchBar.m; sourceTree = "<group>"; };
+		B392D7571DB0D54100187E84 /* HWDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDropdownMenu.h; sourceTree = "<group>"; };
+		B392D7581DB0D54100187E84 /* HWDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDropdownMenu.m; sourceTree = "<group>"; };
+		B392D75D1DB0E23800187E84 /* HWTitleMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTitleMenuViewController.h; sourceTree = "<group>"; };
+		B392D75E1DB0E23800187E84 /* HWTitleMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTitleMenuViewController.m; sourceTree = "<group>"; };
+		B392D7601DB10FC300187E84 /* HWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTabBar.h; sourceTree = "<group>"; };
+		B392D7611DB10FC300187E84 /* HWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTabBar.m; sourceTree = "<group>"; };
 		B3AD9FB91DAFD9D600ACCF30 /* HWDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDiscoverViewController.h; sourceTree = "<group>"; };
 		B3AD9FBA1DAFD9D600ACCF30 /* HWDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDiscoverViewController.m; sourceTree = "<group>"; };
 		B3AD9FBF1DAFD9D600ACCF30 /* HWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHomeViewController.h; sourceTree = "<group>"; };
@@ -178,6 +190,8 @@
 		B3AD9FC21DAFD9D600ACCF30 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B392D75D1DB0E23800187E84 /* HWTitleMenuViewController.h */,
+				B392D75E1DB0E23800187E84 /* HWTitleMenuViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +258,12 @@
 		B3AD9FD21DAFD9D600ACCF30 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B392D7541DB0C41C00187E84 /* HWSearchBar.h */,
+				B392D7551DB0C41C00187E84 /* HWSearchBar.m */,
+				B392D7571DB0D54100187E84 /* HWDropdownMenu.h */,
+				B392D7581DB0D54100187E84 /* HWDropdownMenu.m */,
+				B392D7601DB10FC300187E84 /* HWTabBar.h */,
+				B392D7611DB10FC300187E84 /* HWTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -543,9 +563,13 @@
 				B3AD9FFA1DAFDF9D00ACCF30 /* HWItemTool.m in Sources */,
 				B3AD9FEC1DAFD9D600ACCF30 /* HWNavigationController.m in Sources */,
 				B3AD9FEF1DAFD9D600ACCF30 /* main.m in Sources */,
+				B392D7561DB0C41C00187E84 /* HWSearchBar.m in Sources */,
 				B3AD9FFD1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m in Sources */,
+				B392D75F1DB0E23800187E84 /* HWTitleMenuViewController.m in Sources */,
 				B3AD9FF61DAFD9D600ACCF30 /* HWTest3ViewController.m in Sources */,
 				B3AD9FF41DAFD9D600ACCF30 /* HWTest2ViewController.m in Sources */,
+				B392D7591DB0D54100187E84 /* HWDropdownMenu.m in Sources */,
+				B392D7621DB10FC300187E84 /* HWTabBar.m in Sources */,
 				B3AD9FF01DAFD9D600ACCF30 /* HWMessageCenterViewController.m in Sources */,
 				B3AD9FF11DAFD9D600ACCF30 /* HWProfileViewController.m in Sources */,
 				B3AD9FE91DAFD9D600ACCF30 /* HWDiscoverViewController.m in Sources */,
