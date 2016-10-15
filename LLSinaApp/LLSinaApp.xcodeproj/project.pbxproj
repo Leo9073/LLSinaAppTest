@@ -18,6 +18,7 @@
 		B3016B8D1DB26E1E00433AC5 /* HWAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B3016B8C1DB26E1E00433AC5 /* HWAccount.m */; };
 		B3016B911DB2796D00433AC5 /* HWAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B3016B901DB2796D00433AC5 /* HWAccountTool.m */; };
 		B3016B941DB289C000433AC5 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3016B931DB289C000433AC5 /* UIWindow+Extension.m */; };
+		B3016B9A1DB29F9300433AC5 /* HWTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3016B991DB29F9300433AC5 /* HWTitleButton.m */; };
 		B392D7561DB0C41C00187E84 /* HWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D7551DB0C41C00187E84 /* HWSearchBar.m */; };
 		B392D7591DB0D54100187E84 /* HWDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D7581DB0D54100187E84 /* HWDropdownMenu.m */; };
 		B392D75F1DB0E23800187E84 /* HWTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D75E1DB0E23800187E84 /* HWTitleMenuViewController.m */; };
@@ -86,6 +87,8 @@
 		B3016B901DB2796D00433AC5 /* HWAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWAccountTool.m; sourceTree = "<group>"; };
 		B3016B921DB289C000433AC5 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		B3016B931DB289C000433AC5 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
+		B3016B981DB29F9300433AC5 /* HWTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTitleButton.h; sourceTree = "<group>"; };
+		B3016B991DB29F9300433AC5 /* HWTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTitleButton.m; sourceTree = "<group>"; };
 		B392D7541DB0C41C00187E84 /* HWSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSearchBar.h; sourceTree = "<group>"; };
 		B392D7551DB0C41C00187E84 /* HWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSearchBar.m; sourceTree = "<group>"; };
 		B392D7571DB0D54100187E84 /* HWDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDropdownMenu.h; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 			children = (
 				B392D75D1DB0E23800187E84 /* HWTitleMenuViewController.h */,
 				B392D75E1DB0E23800187E84 /* HWTitleMenuViewController.m */,
+				B3016B981DB29F9300433AC5 /* HWTitleButton.h */,
+				B3016B991DB29F9300433AC5 /* HWTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -671,6 +676,7 @@
 				B3016B911DB2796D00433AC5 /* HWAccountTool.m in Sources */,
 				B3AD9FEB1DAFD9D600ACCF30 /* UIView+Extension.m in Sources */,
 				B3AD9FF21DAFD9D600ACCF30 /* HWTest1ViewController.m in Sources */,
+				B3016B9A1DB29F9300433AC5 /* HWTitleButton.m in Sources */,
 				B3016B861DB2594800433AC5 /* AFSecurityPolicy.m in Sources */,
 				B3016B941DB289C000433AC5 /* UIWindow+Extension.m in Sources */,
 				B3AD9FEA1DAFD9D600ACCF30 /* HWHomeViewController.m in Sources */,

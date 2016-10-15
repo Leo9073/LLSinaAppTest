@@ -9,6 +9,9 @@
 #import "HWHomeViewController.h"
 #import "HWDropdownMenu.h"
 #import "HWTitleMenuViewController.h"
+#import "AFNetworking.h"
+#import "HWAccountTool.h"
+#import "HWTitleButton.h"
 
 @interface HWHomeViewController () <HWDropdownMenuDelegate>
 
@@ -19,31 +22,79 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //设置左边返回按钮
+    //设置导航栏标题
+    [self setupNav];
+    
+    //获得用户信息
+    [self setupUserInfo];
+    
+}
+
+/**
+ *  获取用户信息
+ *
+ */
+- (void)setupUserInfo {
+    
+    //请求路径：https://api.weibo.com/2/users/show.json
+    //请求参数：access_token	false	string	采用OAuth授权方式为必填参数，其他授权方式不需要此参数，OAuth授权后获得。
+    //uid	false	int64	需要查询的用户ID。
+    //1.请求管理者
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    //2.拼接参数
+    HWAccount *account = [HWAccountTool account];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = account.access_token;
+    params[@"uid"] = account.uid;
+    NSString *strUrl = @"https://api.weibo.com/2/users/show.json";
+    
+    //3.发送请求
+    [manager GET:strUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
+        
+        //标题按钮
+        UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
+        NSString *name = responseObject[@"name"];
+        [titleButton setTitle:name forState:UIControlStateNormal];
+        
+        //存储昵称到沙盒中
+        account.name = name;
+        [HWAccountTool saveAccount:account];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        HWLog(@"请求失败---->%@",error);
+    }];
+}
+
+/**
+ *  设置导航栏标题
+ *
+ */
+- (void)setupNav {
+    
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self withAction:@selector(friendsearch) withImage:@"navigationbar_friendsearch" withHighlightedImage:@"navigationbar_friendsearch_highlighted"];
     
     //设置右边更多按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self withAction:@selector(pop) withImage:@"navigationbar_pop" withHighlightedImage:@"navigationbar_pop_highlighted"];
     
     //设置中间item标题按钮
-    UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    titleButton.height = 30;
-    titleButton.width = 100;
+    HWTitleButton *titleButton = [[HWTitleButton alloc] init];
     
-    //设置图片和文字
-    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
-    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    titleButton.titleLabel.font = [UIFont systemFontOfSize:17];
-    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
-    titleButton.imageEdgeInsets = UIEdgeInsetsMake(0, 60, 0, 0);
-    titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
-    
+    //设置图片和文字,如果账号昵称存在，显示上次的，否则显示首页
+    NSString *name = [HWAccountTool account].name;
+    [titleButton setTitle:name?name:@"首页" forState:UIControlStateNormal];
+
     //监听标题的点击
     [titleButton addTarget:self action:@selector(titleClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;
+    
+    //如果按钮内部的图片、文字固定，用imageEdgeInsets和titleEdgeInsets这两个属性来设置间距比较简单
 }
 
+/**
+ *  标题点击
+ *
+ */
 - (void)titleClicked:(UIButton *)titleButton {
     
     //创建下拉菜单
@@ -58,28 +109,6 @@
     //显示
     [menu showFrom:titleButton];
 }
-
-//方法重构,避免重复代码太多
-/**
- *  创建一个item
- *
- *  @param action           点击item后调用的方法
- *  @param image            图片
- *  @param highlightedImage 高亮图片
- *
- *  @return 创建完的item
- */
-//- (UIBarButtonItem *)itemWithAction:(SEL)action withImage:(NSString *)image withHighlightedImage:(NSString *)highlightedImage {
-//    
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
-//    [btn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
-//    [btn setBackgroundImage:[UIImage imageNamed:highlightedImage] forState:UIControlStateHighlighted];
-//    //设置尺寸
-//    btn.size = btn.currentBackgroundImage.size;
-//    return [[UIBarButtonItem alloc] initWithCustomView:btn];
-//}
-
 
 - (void)friendsearch {
     
@@ -128,59 +157,5 @@
 #warning Incomplete implementation, return the number of rows
     return 0;
 }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

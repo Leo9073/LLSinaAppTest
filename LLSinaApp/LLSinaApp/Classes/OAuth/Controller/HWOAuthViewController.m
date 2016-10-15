@@ -10,7 +10,6 @@
 #import "AFNetworking.h"
 #import "HWTabbBarViewController.h"
 #import "HWNewfeatureViewController.h"
-#import "HWAccount.h"
 #import "HWAccountTool.h"
 
 @interface HWOAuthViewController () <UIWebViewDelegate>

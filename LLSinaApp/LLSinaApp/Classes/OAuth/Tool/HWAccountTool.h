@@ -7,7 +7,7 @@
 // 处理账号相关的所有信息:存储账号，取出账号，验证账号
 
 #import <Foundation/Foundation.h>
-@class HWAccount;
+#import "HWAccount.h"
 
 @interface HWAccountTool : NSObject
 /**

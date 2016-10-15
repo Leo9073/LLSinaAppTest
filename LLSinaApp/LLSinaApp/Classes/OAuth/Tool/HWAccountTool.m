@@ -21,9 +21,7 @@
  */
 + (void)saveAccount:(HWAccount *)account {
     
-    //获得账号存储时间(accessToken的产生时间)
-    account.created_time = [NSDate date];
-    
+        
     //自定义对象的存储必须用NSKeyedArchiver，不能使用writeToFile
     [NSKeyedArchiver archiveRootObject:account toFile:HWAccountPath];
 }
