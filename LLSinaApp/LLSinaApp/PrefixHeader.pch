@@ -19,6 +19,7 @@
 #import <Foundation/Foundation.h>
 #import "UIView+Extension.h"
 #import "UIBarButtonItem+Extension.h"
+#import "UIWindow+Extension.h"
 
 #ifdef DEBUG //处于开发阶段
 #define HWLog(...) NSLog(__VA_ARGS__)
