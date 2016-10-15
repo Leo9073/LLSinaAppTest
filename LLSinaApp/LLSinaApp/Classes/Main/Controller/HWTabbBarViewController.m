@@ -41,7 +41,7 @@
 //    self.tabBar = [[HWTabBar alloc] init];
     //使用KVC
     HWTabBar *tabBar = [[HWTabBar alloc] init];
-    tabBar.delegate = self;
+//    tabBar.delegate = self;
     [self setValue:tabBar forKeyPath:@"tabBar"];
     
 }

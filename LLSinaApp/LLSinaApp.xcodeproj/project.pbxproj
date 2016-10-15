@@ -28,6 +28,7 @@
 		B3AD9FF71DAFD9D600ACCF30 /* HWTest3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3AD9FE81DAFD9D600ACCF30 /* HWTest3ViewController.xib */; };
 		B3AD9FFA1DAFDF9D00ACCF30 /* HWItemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD9FF91DAFDF9D00ACCF30 /* HWItemTool.m */; };
 		B3AD9FFD1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD9FFC1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m */; };
+		B3D3375D1DB207580079031A /* HWNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3375C1DB207580079031A /* HWNewfeatureViewController.m */; };
 		B3FF4F631DAE61470083809C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FF4F621DAE61470083809C /* Assets.xcassets */; };
 		B3FF4F661DAE61470083809C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FF4F641DAE61470083809C /* LaunchScreen.storyboard */; };
 		B3FF4F711DAE61470083809C /* LLSinaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF4F701DAE61470083809C /* LLSinaAppTests.m */; };
@@ -90,6 +91,8 @@
 		B3AD9FF91DAFDF9D00ACCF30 /* HWItemTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWItemTool.m; path = ../HWItemTool.m; sourceTree = "<group>"; };
 		B3AD9FFB1DAFE33600ACCF30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		B3AD9FFC1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		B3D3375B1DB207580079031A /* HWNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWNewfeatureViewController.h; sourceTree = "<group>"; };
+		B3D3375C1DB207580079031A /* HWNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWNewfeatureViewController.m; sourceTree = "<group>"; };
 		B3FF4F531DAE61470083809C /* LLSinaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLSinaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF4F621DAE61470083809C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3FF4F651DAE61470083809C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -352,6 +355,23 @@
 			path = Temp;
 			sourceTree = "<group>";
 		};
+		B3D337591DB2073A0079031A /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3375A1DB2073A0079031A /* Controller */,
+				B3D3375B1DB207580079031A /* HWNewfeatureViewController.h */,
+				B3D3375C1DB207580079031A /* HWNewfeatureViewController.m */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		B3D3375A1DB2073A0079031A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B3FF4F4A1DAE61470083809C = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +433,7 @@
 		B3FF4F891DAE68810083809C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B3D337591DB2073A0079031A /* NewFeature */,
 				B3AD9FB71DAFD9D600ACCF30 /* Discover */,
 				B3AD9FBD1DAFD9D600ACCF30 /* Home */,
 				B3AD9FC31DAFD9D600ACCF30 /* Main */,
@@ -562,6 +583,7 @@
 				B3AD9FED1DAFD9D600ACCF30 /* HWTabbBarViewController.m in Sources */,
 				B3AD9FFA1DAFDF9D00ACCF30 /* HWItemTool.m in Sources */,
 				B3AD9FEC1DAFD9D600ACCF30 /* HWNavigationController.m in Sources */,
+				B3D3375D1DB207580079031A /* HWNewfeatureViewController.m in Sources */,
 				B3AD9FEF1DAFD9D600ACCF30 /* main.m in Sources */,
 				B392D7561DB0C41C00187E84 /* HWSearchBar.m in Sources */,
 				B3AD9FFD1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m in Sources */,
