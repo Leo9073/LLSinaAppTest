@@ -28,6 +28,32 @@
     //获得用户信息
     [self setupUserInfo];
     
+    //获得当前用户及所关注的人的微博数据
+    [self loadNewStatus];
+    
+}
+
+/**
+ *  获得当前用户及所关注的人的微博数据
+ */
+- (void)loadNewStatus {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    //2.拼接参数
+    HWAccount *account = [HWAccountTool account];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = account.access_token;
+    NSString *strUrl = @"https://api.weibo.com/2/statuses/friends_timeline.json";
+    
+    //3.发送请求
+    [manager GET:strUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
+        
+        HWLog(@"请求成功---->%@",responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        HWLog(@"请求失败---->%@",error);
+    }];
 }
 
 /**
