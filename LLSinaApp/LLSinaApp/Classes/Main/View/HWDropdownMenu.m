@@ -97,7 +97,7 @@
     //默认情况下，frame是以父控件左上角为坐标原点
     //可以转换坐标系原点，改变frame的参照点
 //    CGRect newFrame = [from convertRect:from.bounds toView:window]; //与上面的写法是一样的效果，将自身的坐标原点转换为窗口的坐标原点进行计算
-    CGRect newFrame = [from.superview convertRect:from.frame toView:window];
+    CGRect newFrame = [from convertRect:from.bounds toView:window];
     self.containerView.centerX = CGRectGetMidX(newFrame);
     self.containerView.y = CGRectGetMaxY(newFrame);
     
