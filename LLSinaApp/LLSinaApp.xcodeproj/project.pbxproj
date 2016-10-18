@@ -39,6 +39,8 @@
 		B3491CFE1DB4A06E004F8BF6 /* HWStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = B3491CFD1DB4A06E004F8BF6 /* HWStatus.m */; };
 		B3491D011DB4E541004F8BF6 /* HWLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B3491D001DB4E541004F8BF6 /* HWLoadMoreFooter.m */; };
 		B3491D031DB4E56E004F8BF6 /* HWLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3491D021DB4E56E004F8BF6 /* HWLoadMoreFooter.xib */; };
+		B37E786B1DB6491400C4160E /* HWStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B37E786A1DB6491400C4160E /* HWStatusCell.m */; };
+		B37E786E1DB64F3100C4160E /* HWStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = B37E786D1DB64F3100C4160E /* HWStatusFrame.m */; };
 		B392D7561DB0C41C00187E84 /* HWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D7551DB0C41C00187E84 /* HWSearchBar.m */; };
 		B392D7591DB0D54100187E84 /* HWDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D7581DB0D54100187E84 /* HWDropdownMenu.m */; };
 		B392D75F1DB0E23800187E84 /* HWTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D75E1DB0E23800187E84 /* HWTitleMenuViewController.m */; };
@@ -152,6 +154,10 @@
 		B3491CFF1DB4E541004F8BF6 /* HWLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWLoadMoreFooter.h; sourceTree = "<group>"; };
 		B3491D001DB4E541004F8BF6 /* HWLoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWLoadMoreFooter.m; sourceTree = "<group>"; };
 		B3491D021DB4E56E004F8BF6 /* HWLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWLoadMoreFooter.xib; sourceTree = "<group>"; };
+		B37E78691DB6491400C4160E /* HWStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusCell.h; sourceTree = "<group>"; };
+		B37E786A1DB6491400C4160E /* HWStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStatusCell.m; sourceTree = "<group>"; };
+		B37E786C1DB64F3100C4160E /* HWStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusFrame.h; sourceTree = "<group>"; };
+		B37E786D1DB64F3100C4160E /* HWStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStatusFrame.m; sourceTree = "<group>"; };
 		B392D7541DB0C41C00187E84 /* HWSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSearchBar.h; sourceTree = "<group>"; };
 		B392D7551DB0C41C00187E84 /* HWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSearchBar.m; sourceTree = "<group>"; };
 		B392D7571DB0D54100187E84 /* HWDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDropdownMenu.h; sourceTree = "<group>"; };
@@ -404,6 +410,8 @@
 				B3491CFA1DB4A051004F8BF6 /* HWUser.m */,
 				B3491CFC1DB4A06E004F8BF6 /* HWStatus.h */,
 				B3491CFD1DB4A06E004F8BF6 /* HWStatus.m */,
+				B37E786C1DB64F3100C4160E /* HWStatusFrame.h */,
+				B37E786D1DB64F3100C4160E /* HWStatusFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,6 +426,8 @@
 				B3491CFF1DB4E541004F8BF6 /* HWLoadMoreFooter.h */,
 				B3491D001DB4E541004F8BF6 /* HWLoadMoreFooter.m */,
 				B3491D021DB4E56E004F8BF6 /* HWLoadMoreFooter.xib */,
+				B37E78691DB6491400C4160E /* HWStatusCell.h */,
+				B37E786A1DB6491400C4160E /* HWStatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -861,12 +871,14 @@
 				B3AD9FEB1DAFD9D600ACCF30 /* UIView+Extension.m in Sources */,
 				B3AD9FF21DAFD9D600ACCF30 /* HWTest1ViewController.m in Sources */,
 				B3491CF11DB49DB2004F8BF6 /* SDWebImagePrefetcher.m in Sources */,
+				B37E786B1DB6491400C4160E /* HWStatusCell.m in Sources */,
 				B3016B9A1DB29F9300433AC5 /* HWTitleButton.m in Sources */,
 				B3491CEF1DB49DB2004F8BF6 /* SDWebImageDownloaderOperation.m in Sources */,
 				B3491CF61DB49DB2004F8BF6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				B3016B861DB2594800433AC5 /* AFSecurityPolicy.m in Sources */,
 				B3016B941DB289C000433AC5 /* UIWindow+Extension.m in Sources */,
 				B3AD9FEA1DAFD9D600ACCF30 /* HWHomeViewController.m in Sources */,
+				B37E786E1DB64F3100C4160E /* HWStatusFrame.m in Sources */,
 				B3491CFB1DB4A051004F8BF6 /* HWUser.m in Sources */,
 				B3491CF51DB49DB2004F8BF6 /* UIImage+WebP.m in Sources */,
 				B3491CED1DB49DB2004F8BF6 /* SDWebImageDecoder.m in Sources */,

@@ -19,4 +19,11 @@
 /** user	object	微博作者的用户信息字段 详细 */
 @property (strong,nonatomic) HWUser *user;
 
+/** created_at	微博创建时间 */
+@property (copy,nonatomic) NSString *created_at;
+
+/** source	微博来源 */
+@property (copy,nonatomic) NSString *source;
+
+
 @end
