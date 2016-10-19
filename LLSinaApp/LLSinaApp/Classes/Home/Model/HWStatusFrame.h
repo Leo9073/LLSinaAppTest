@@ -28,7 +28,7 @@
 #define HWStatusCellRetweetContentFont [UIFont systemFontOfSize:14]
 
 //cell之间的间距
-#define HWStatusCellMargin 15
+#define HWStatusCellMargin 10
 
 
 @interface HWStatusFrame : NSObject

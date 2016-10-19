@@ -41,6 +41,7 @@
 		B3491D031DB4E56E004F8BF6 /* HWLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3491D021DB4E56E004F8BF6 /* HWLoadMoreFooter.xib */; };
 		B36229531DB706DB0026A449 /* HWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B36229521DB706DB0026A449 /* HWPhoto.m */; };
 		B36229561DB757D80026A449 /* HWStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = B36229551DB757D80026A449 /* HWStatusToolbar.m */; };
+		B36229591DB7B1030026A449 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B36229581DB7B1030026A449 /* NSDate+Extension.m */; };
 		B37E786B1DB6491400C4160E /* HWStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B37E786A1DB6491400C4160E /* HWStatusCell.m */; };
 		B37E786E1DB64F3100C4160E /* HWStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = B37E786D1DB64F3100C4160E /* HWStatusFrame.m */; };
 		B392D7561DB0C41C00187E84 /* HWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B392D7551DB0C41C00187E84 /* HWSearchBar.m */; };
@@ -160,6 +161,8 @@
 		B36229521DB706DB0026A449 /* HWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPhoto.m; sourceTree = "<group>"; };
 		B36229541DB757D80026A449 /* HWStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusToolbar.h; sourceTree = "<group>"; };
 		B36229551DB757D80026A449 /* HWStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStatusToolbar.m; sourceTree = "<group>"; };
+		B36229571DB7B1030026A449 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		B36229581DB7B1030026A449 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		B37E78691DB6491400C4160E /* HWStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusCell.h; sourceTree = "<group>"; };
 		B37E786A1DB6491400C4160E /* HWStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStatusCell.m; sourceTree = "<group>"; };
 		B37E786C1DB64F3100C4160E /* HWStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusFrame.h; sourceTree = "<group>"; };
@@ -464,6 +467,8 @@
 				B3AD9FFC1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m */,
 				B3016B921DB289C000433AC5 /* UIWindow+Extension.h */,
 				B3016B931DB289C000433AC5 /* UIWindow+Extension.m */,
+				B36229571DB7B1030026A449 /* NSDate+Extension.h */,
+				B36229581DB7B1030026A449 /* NSDate+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -921,6 +926,7 @@
 				B3AD9FF61DAFD9D600ACCF30 /* HWTest3ViewController.m in Sources */,
 				B3AD9FF41DAFD9D600ACCF30 /* HWTest2ViewController.m in Sources */,
 				B3016B8D1DB26E1E00433AC5 /* HWAccount.m in Sources */,
+				B36229591DB7B1030026A449 /* NSDate+Extension.m in Sources */,
 				B3491CEE1DB49DB2004F8BF6 /* SDWebImageDownloader.m in Sources */,
 				B392D7591DB0D54100187E84 /* HWDropdownMenu.m in Sources */,
 				B3491CEA1DB49DB2004F8BF6 /* NSData+ImageContentType.m in Sources */,
