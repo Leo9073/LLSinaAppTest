@@ -38,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.backgroundColor = HWColor(211, 211, 211);
     //设置导航栏标题
     [self setupNav];
     
@@ -163,6 +164,8 @@
     
     //3.发送请求
     [manager GET:strUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
+        
+//        HWLog(@"%@",responseObject);
         //取得微博数组
         NSArray *newStatuses = [HWStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         

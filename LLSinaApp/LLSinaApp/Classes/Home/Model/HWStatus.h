@@ -25,5 +25,9 @@
 /** source	微博来源 */
 @property (copy,nonatomic) NSString *source;
 
+/** pic_urls	配图 */
+@property (strong,nonatomic) NSArray *pic_urls;
 
+/** 被转发微博 */
+@property (strong,nonatomic) HWStatus *retweeted_status;
 @end
