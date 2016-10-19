@@ -11,10 +11,6 @@
 //cell的边框宽度
 #define HWStatusCellBorderW 10
 
-//cell之间的间距
-#define HWStatusCellMargin 15
-
-
 @implementation HWStatusFrame
 
 - (CGSize)sizeWithText:(NSString *)text withFont:(UIFont *)font withMaxW:(CGFloat)maxW {
@@ -93,7 +89,7 @@
     
     /** 原创微博整体 */
     CGFloat originalX = 0;
-    CGFloat originalY = 0;
+    CGFloat originalY = HWStatusCellMargin;
     CGFloat originalW = cellW;
     //
     self.originalViewF = CGRectMake(originalX, originalY, originalW, originalH);
@@ -142,7 +138,7 @@
     self.toolbarF = CGRectMake(toolbarX, toolbarY, toolbarW, toolbarH);
     
     /** cell的高度 */
-    self.cellHeight = CGRectGetMaxY(self.toolbarF)+HWStatusCellMargin;
+    self.cellHeight = CGRectGetMaxY(self.toolbarF);
     
 }
 

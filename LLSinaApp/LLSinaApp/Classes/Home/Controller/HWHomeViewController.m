@@ -18,6 +18,7 @@
 #import <MJExtension.h>
 #import "HWLoadMoreFooter.h"
 #import "HWStatusCell.h"
+#import "HWStatusFrame.h"
 
 @interface HWHomeViewController () <HWDropdownMenuDelegate>
 /**

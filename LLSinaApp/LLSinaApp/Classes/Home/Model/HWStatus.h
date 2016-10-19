@@ -30,4 +30,14 @@
 
 /** 被转发微博 */
 @property (strong,nonatomic) HWStatus *retweeted_status;
+
+/** 转发数 */
+@property (assign,nonatomic) NSInteger reposts_count;
+
+/** 评论数 */
+@property (assign,nonatomic) NSInteger comments_count;
+
+/** 表态数 */
+@property (assign,nonatomic) NSInteger attitudes_count;
+
 @end

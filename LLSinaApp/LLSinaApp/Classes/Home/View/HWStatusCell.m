@@ -9,6 +9,7 @@
 #import "HWStatusCell.h"
 #import "UIImageView+WebCache.h"
 #import "HWPhoto.h"
+#import "HWStatusToolbar.h"
 
 @interface HWStatusCell ()
 /** 原创微博 */
@@ -46,7 +47,7 @@
 @property (weak,nonatomic) UIImageView *retweetPhotoView;
 
 /** 工具条 */
-@property (weak,nonatomic) UIView *toobar;
+@property (weak,nonatomic) HWStatusToolbar *toobar;
 
 /** 转发微博正文+昵称 */
 //@property (weak,nonatomic) UILabel *retweetContentLabel;
@@ -75,7 +76,8 @@
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
+        self.backgroundColor = [UIColor clearColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         //初始化原创微博
         [self setupOriginal];
         
@@ -88,13 +90,18 @@
     return self;
 }
 
+//- (void)setFrame:(CGRect)frame {
+//    
+//    frame.origin.y += HWStatusCellMargin;
+//    [super setFrame:frame];
+//}
+
 /**
  *  初始化工具条
  */
 - (void)setupToolbar {
     
-    UIView *toolbar = [[UIView alloc] init];
-    toolbar.backgroundColor = [UIColor redColor];
+    HWStatusToolbar *toolbar = [HWStatusToolbar toolbar];
     [self.contentView addSubview:toolbar];
     self.toobar = toolbar;
 }
@@ -258,6 +265,7 @@
     
     /**  */
     self.toobar.frame = statusFrame.toolbarF;
+    self.toobar.status = status;
 }
 
 @end

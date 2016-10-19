@@ -27,6 +27,10 @@
 //被转发微博正文字体
 #define HWStatusCellRetweetContentFont [UIFont systemFontOfSize:14]
 
+//cell之间的间距
+#define HWStatusCellMargin 15
+
+
 @interface HWStatusFrame : NSObject
 
 @property (strong,nonatomic) HWStatus *status;
