@@ -1071,7 +1071,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/leo/Desktop/LLSinaAppTest/LLSinaApp/LLSinaApp/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LLSinaApp/PrefixHeader.pch";
 				INFOPLIST_FILE = LLSinaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Leo.LLSinaApp;
@@ -1086,7 +1086,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/leo/Desktop/LLSinaAppTest/LLSinaApp/LLSinaApp/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LLSinaApp/PrefixHeader.pch";
 				INFOPLIST_FILE = LLSinaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Leo.LLSinaApp;
