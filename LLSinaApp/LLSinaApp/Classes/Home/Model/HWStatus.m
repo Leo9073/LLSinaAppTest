@@ -63,9 +63,6 @@
     NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     //计算两个日期之间的差值
     NSDateComponents *cmps = [calendar components:unit fromDate:createDate toDate:now options:0];
-//    //获得某个时间的年月日时分秒
-//    NSDateComponents *createdDateCmps = [calendar components:unit fromDate:createDate];
-//    NSDateComponents *nowCmps = [calendar components:unit fromDate:now];
     
     //没思路可以先写伪代码
     
@@ -89,6 +86,20 @@
         fmt.dateFormat = @"yyyy-MM-dd HH:mm";
         return [fmt stringFromDate:createDate];
     }
+}
+
+/**
+ *  重写来源的set方法，而不是get方法，是因为在滚动过程中来源是不会发生变化的，因此只调用一次就可以了，
+ */
+// <a href="http://app.weibo.com/t/feed/6vtZb0" rel="nofollow">微博 weibo.com</a>
+- (void)setSource:(NSString *)source {
+    
+    //可以使用正则表达式
+    //也可以使用截取字符串
+    NSRange range;
+    range.location = [source rangeOfString:@">"].location+1;
+    range.length = [source rangeOfString:@"</"].location-range.location;
+    _source = [NSString stringWithFormat:@"来自 %@",[source substringWithRange:range]];
 }
 
 @end

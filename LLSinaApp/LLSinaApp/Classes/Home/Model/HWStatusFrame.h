@@ -12,6 +12,9 @@
 #import <Foundation/Foundation.h>
 #import "HWStatus.h"
 
+//cell的边框宽度
+#define HWStatusCellBorderW 10
+
 //昵称字体
 #define HWStatusCellNameFont [UIFont systemFontOfSize:15]
 
