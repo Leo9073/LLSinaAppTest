@@ -45,7 +45,7 @@
 @property (assign,nonatomic) CGRect iconViewF;
 
 /** 配图 */
-@property (assign,nonatomic) CGRect photoViewF;
+@property (assign,nonatomic) CGRect photosViewF;
 
 /** 会员图标 */
 @property (assign,nonatomic) CGRect vipViewF;
@@ -72,7 +72,7 @@
 @property (assign,nonatomic) CGRect retweetContentLabelF;
 
 /** 转发微博配图 */
-@property (assign,nonatomic) CGRect retweetPhotoViewF;
+@property (assign,nonatomic) CGRect retweetPhotosViewF;
 
 /** 工具条 */
 @property (assign,nonatomic) CGRect toolbarF;

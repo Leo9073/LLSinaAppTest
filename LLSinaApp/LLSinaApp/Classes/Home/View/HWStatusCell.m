@@ -11,6 +11,7 @@
 #import "HWPhoto.h"
 #import "HWStatusToolbar.h"
 #import "HWStatusFrame.h"
+#import "HWStatusPhotosView.h"
 
 @interface HWStatusCell ()
 /** 原创微博 */
@@ -20,7 +21,7 @@
 @property (weak,nonatomic) UIImageView *iconView;
 
 /** 配图 */
-@property (weak,nonatomic) UIImageView *photoView;
+@property (weak,nonatomic) HWStatusPhotosView *photosView;
 
 /** 会员图标 */
 @property (weak,nonatomic) UIImageView *vipView;
@@ -45,7 +46,7 @@
 @property (weak,nonatomic) UILabel *retweetContentLabel;
 
 /** 转发微博配图 */
-@property (weak,nonatomic) UIImageView *retweetPhotoView;
+@property (weak,nonatomic) HWStatusPhotosView *retweetPhotosView;
 
 /** 工具条 */
 @property (weak,nonatomic) HWStatusToolbar *toobar;
@@ -127,9 +128,9 @@
     self.retweetContentLabel = retweetContentLabel;
     
     /** 转发微博配图 */
-    UIImageView *retweetPhotoView = [[UIImageView alloc] init];
-    [retweetView addSubview:retweetPhotoView];
-    self.retweetPhotoView = retweetPhotoView;
+    HWStatusPhotosView *retweetPhotosView = [[HWStatusPhotosView alloc] init];
+    [retweetView addSubview:retweetPhotosView];
+    self.retweetPhotosView = retweetPhotosView;
 }
 
 /**
@@ -150,9 +151,9 @@
     self.iconView = iconView;
     
     /** 配图 */
-    UIImageView *photoView = [[UIImageView alloc] init];
-    [originalView addSubview:photoView];
-    self.photoView = photoView;
+    HWStatusPhotosView *photosView = [[HWStatusPhotosView alloc] init];
+    [originalView addSubview:photosView];
+    self.photosView = photosView;
     
     /** 会员图标 */
     UIImageView *vipView = [[UIImageView alloc] init];
@@ -203,12 +204,11 @@
     
     /** 配图 */
     if (status.pic_urls.count) {
-        self.photoView.frame = statusFrame.photoViewF;
-        HWPhoto *photo = [status.pic_urls firstObject];
-        [self.photoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-        self.photoView.hidden = NO; //防止循环引用
+        self.photosView.frame = statusFrame.photosViewF;
+        self.photosView.photos = status.pic_urls;
+        self.photosView.hidden = NO; //防止循环引用
     } else {
-        self.photoView.hidden = YES; //防止循环引用
+        self.photosView.hidden = YES; //防止循环引用
     }
     
     /** 会员图标 */
@@ -235,7 +235,7 @@
     self.timeLabel.text = time;
     
     /** 来源 */
-    CGFloat sourceX = CGRectGetMaxX(self.nameLabel.frame)+HWStatusCellBorderW;
+    CGFloat sourceX = CGRectGetMaxX(self.timeLabel.frame)+HWStatusCellBorderW;
     CGFloat sourceY = timeY;
     CGSize sourceSize = [status.source sizeWithFont:HWStatusCellSourceFont];
     self.sourceLabel.frame = (CGRect){{sourceX,sourceY},sourceSize};
@@ -261,12 +261,11 @@
         
         /** 配图 */
         if (retweeted_status.pic_urls.count) {
-            self.retweetPhotoView.frame = statusFrame.retweetPhotoViewF;
-            HWPhoto *retweetedPhoto = [retweeted_status.pic_urls firstObject];
-            [self.retweetPhotoView sd_setImageWithURL:[NSURL URLWithString:retweetedPhoto.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-            self.retweetPhotoView.hidden = NO; //防止循环引用
+            self.retweetPhotosView.frame = statusFrame.retweetPhotosViewF;
+            self.retweetPhotosView.photos = retweeted_status.pic_urls;
+            self.retweetPhotosView.hidden = NO; //防止循环引用
         } else {
-            self.retweetPhotoView.hidden = YES; //防止循环引用
+            self.retweetPhotosView.hidden = YES; //防止循环引用
         }
     } else {
         self.retweetView.hidden = YES;

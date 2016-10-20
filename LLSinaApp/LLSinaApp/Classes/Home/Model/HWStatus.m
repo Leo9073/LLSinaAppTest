@@ -96,7 +96,7 @@
     
     //可以使用正则表达式
     //也可以使用截取字符串
-    NSRange range;
+    NSRange range = NSMakeRange(0, 0);
     range.location = [source rangeOfString:@">"].location+1;
     range.length = [source rangeOfString:@"</"].location-range.location;
     _source = [NSString stringWithFormat:@"来自 %@",[source substringWithRange:range]];

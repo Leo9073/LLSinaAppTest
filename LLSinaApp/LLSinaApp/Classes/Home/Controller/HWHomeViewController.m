@@ -120,14 +120,14 @@
     UIRefreshControl *control = [[UIRefreshControl alloc] init];
     
     //只有用户手动下拉刷新才会触发UIControlEventValueChanged事件
-    [control addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
+    [control addTarget:self action:@selector(loadNewStatus:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:control];
     
     //进入刷新状态(仅仅是显示刷新状态，不会触发UIControlEventValueChanged事件)
     [control beginRefreshing];
     
     //马上加载数据
-    [self refreshStateChange:control];
+    [self loadNewStatus:control];
 }
 
 /**
@@ -147,7 +147,7 @@
 /**
  *  UIRefreshControl进入刷新状态，加载最新数据(最前面的数据)
  */
-- (void)refreshStateChange:(UIRefreshControl *)control {
+- (void)loadNewStatus:(UIRefreshControl *)control {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -450,7 +450,7 @@
     CGFloat judgeOffsetY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height - self.tableView.tableFooterView.height;
     if (offsetY >= judgeOffsetY) { // 最后一个cell完全进入视野范围内
         //显示footer
-        self.tableView.tableFooterView.hidden = YES;
+        self.tableView.tableFooterView.hidden = NO;
         
         //同时加载更多的数据
         [self loadMoreStatus];

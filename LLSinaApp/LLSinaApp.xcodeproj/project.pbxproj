@@ -66,6 +66,8 @@
 		B3AD9FF71DAFD9D600ACCF30 /* HWTest3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3AD9FE81DAFD9D600ACCF30 /* HWTest3ViewController.xib */; };
 		B3AD9FFA1DAFDF9D00ACCF30 /* HWItemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD9FF91DAFDF9D00ACCF30 /* HWItemTool.m */; };
 		B3AD9FFD1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD9FFC1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m */; };
+		B3DC58F91DB8EEF2003ACCDD /* HWStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC58F81DB8EEF2003ACCDD /* HWStatusPhotosView.m */; };
+		B3DC58FC1DB906A5003ACCDD /* HWStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC58FB1DB906A5003ACCDD /* HWStatusPhotoView.m */; };
 		B3FF4F631DAE61470083809C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FF4F621DAE61470083809C /* Assets.xcassets */; };
 		B3FF4F661DAE61470083809C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FF4F641DAE61470083809C /* LaunchScreen.storyboard */; };
 		B3FF4F711DAE61470083809C /* LLSinaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF4F701DAE61470083809C /* LLSinaAppTests.m */; };
@@ -208,6 +210,10 @@
 		B3AD9FF91DAFDF9D00ACCF30 /* HWItemTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWItemTool.m; path = ../HWItemTool.m; sourceTree = "<group>"; };
 		B3AD9FFB1DAFE33600ACCF30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		B3AD9FFC1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		B3DC58F71DB8EEF2003ACCDD /* HWStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusPhotosView.h; sourceTree = "<group>"; };
+		B3DC58F81DB8EEF2003ACCDD /* HWStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStatusPhotosView.m; sourceTree = "<group>"; };
+		B3DC58FA1DB906A5003ACCDD /* HWStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusPhotoView.h; sourceTree = "<group>"; };
+		B3DC58FB1DB906A5003ACCDD /* HWStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStatusPhotoView.m; sourceTree = "<group>"; };
 		B3FF4F531DAE61470083809C /* LLSinaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLSinaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF4F621DAE61470083809C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3FF4F651DAE61470083809C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -444,6 +450,10 @@
 				B37E786A1DB6491400C4160E /* HWStatusCell.m */,
 				B36229541DB757D80026A449 /* HWStatusToolbar.h */,
 				B36229551DB757D80026A449 /* HWStatusToolbar.m */,
+				B3DC58F71DB8EEF2003ACCDD /* HWStatusPhotosView.h */,
+				B3DC58F81DB8EEF2003ACCDD /* HWStatusPhotosView.m */,
+				B3DC58FA1DB906A5003ACCDD /* HWStatusPhotoView.h */,
+				B3DC58FB1DB906A5003ACCDD /* HWStatusPhotoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -929,6 +939,7 @@
 				B3016B871DB2594800433AC5 /* AFURLRequestSerialization.m in Sources */,
 				B3491CE91DB49DB2004F8BF6 /* MKAnnotationView+WebCache.m in Sources */,
 				B3491CF71DB49DB2004F8BF6 /* UIImageView+WebCache.m in Sources */,
+				B3DC58F91DB8EEF2003ACCDD /* HWStatusPhotosView.m in Sources */,
 				B3AD9FF61DAFD9D600ACCF30 /* HWTest3ViewController.m in Sources */,
 				B3AD9FF41DAFD9D600ACCF30 /* HWTest2ViewController.m in Sources */,
 				B3016B8D1DB26E1E00433AC5 /* HWAccount.m in Sources */,
@@ -938,6 +949,7 @@
 				B3491CEA1DB49DB2004F8BF6 /* NSData+ImageContentType.m in Sources */,
 				B392D7621DB10FC300187E84 /* HWTabBar.m in Sources */,
 				B3AD9FF01DAFD9D600ACCF30 /* HWMessageCenterViewController.m in Sources */,
+				B3DC58FC1DB906A5003ACCDD /* HWStatusPhotoView.m in Sources */,
 				B3AD9FF11DAFD9D600ACCF30 /* HWProfileViewController.m in Sources */,
 				B3491CF21DB49DB2004F8BF6 /* UIButton+WebCache.m in Sources */,
 				B3016B851DB2594800433AC5 /* AFNetworkReachabilityManager.m in Sources */,
