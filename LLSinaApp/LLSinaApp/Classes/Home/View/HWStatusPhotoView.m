@@ -27,6 +27,15 @@
     return _gifView;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.contentMode = UIViewContentModeScaleAspectFill;
+        self.clipsToBounds = YES;  //超出边框被裁减
+    }
+    return self;
+}
 
 - (void)setPhoto:(HWPhoto *)photo {
     

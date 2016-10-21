@@ -52,6 +52,11 @@
     
 }
 
+- (void)setTitle:(NSString *)title forState:(UIControlState)state {
+    
+    [super setTitle:title forState:state];
+    [self sizeToFit];
+}
 
 - (void)setImage:(UIImage *)image forState:(UIControlState)state {
     
