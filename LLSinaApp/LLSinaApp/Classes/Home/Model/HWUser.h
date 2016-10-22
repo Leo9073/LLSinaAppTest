@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    HWUserVerifiedTypeNone = -1, //没有任何认证
+    HWUserVerifiedTypePersonal = 0,
+    HWUserVerifiedTypeOrgEnterprice = 2,
+    HWUserVerifiedTypeOrgMedia = 3,
+    HWUserVerifiedTypeOrgWebsite = 5,
+    HWUserVerifiedTypeDaren = 220,
+} HWUserVerifiedType;
+
 @interface HWUser : NSObject
 
 /** idstr	string	字符串型的用户UID */
@@ -26,5 +35,8 @@
 @property (assign,nonatomic) NSInteger mbrank;
 
 @property (assign,nonatomic, getter=isVip) BOOL vip;
+
+/** 会员等级 */
+@property (assign,nonatomic) HWUserVerifiedType verified_type;
 
 @end

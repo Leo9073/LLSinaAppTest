@@ -12,13 +12,14 @@
 #import "HWStatusToolbar.h"
 #import "HWStatusFrame.h"
 #import "HWStatusPhotosView.h"
+#import "HWIconView.h"
 
 @interface HWStatusCell ()
 /** 原创微博 */
 @property (weak,nonatomic) UIView *originalView;
 
 /** 头像图标 */
-@property (weak,nonatomic) UIImageView *iconView;
+@property (weak,nonatomic) HWIconView *iconView;
 
 /** 配图 */
 @property (weak,nonatomic) HWStatusPhotosView *photosView;
@@ -146,7 +147,7 @@
     self.originalView = originalView;
     
     /** 头像图标 */
-    UIImageView *iconView = [[UIImageView alloc] init];
+    HWIconView *iconView = [[HWIconView alloc] init];
     [originalView addSubview:iconView];
     self.iconView = iconView;
     
@@ -200,7 +201,7 @@
     
     /** 头像图标 */
     self.iconView.frame = statusFrame.iconViewF;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+    self.iconView.user = user;
     
     /** 配图 */
     if (status.pic_urls.count) {

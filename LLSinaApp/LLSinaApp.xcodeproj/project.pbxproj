@@ -66,6 +66,7 @@
 		B3AD9FF71DAFD9D600ACCF30 /* HWTest3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3AD9FE81DAFD9D600ACCF30 /* HWTest3ViewController.xib */; };
 		B3AD9FFA1DAFDF9D00ACCF30 /* HWItemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD9FF91DAFDF9D00ACCF30 /* HWItemTool.m */; };
 		B3AD9FFD1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD9FFC1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m */; };
+		B3B60B7E1DBB39E200987943 /* HWIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B60B7D1DBB39E200987943 /* HWIconView.m */; };
 		B3DC58F91DB8EEF2003ACCDD /* HWStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC58F81DB8EEF2003ACCDD /* HWStatusPhotosView.m */; };
 		B3DC58FC1DB906A5003ACCDD /* HWStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC58FB1DB906A5003ACCDD /* HWStatusPhotoView.m */; };
 		B3FF4F631DAE61470083809C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FF4F621DAE61470083809C /* Assets.xcassets */; };
@@ -210,6 +211,8 @@
 		B3AD9FF91DAFDF9D00ACCF30 /* HWItemTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWItemTool.m; path = ../HWItemTool.m; sourceTree = "<group>"; };
 		B3AD9FFB1DAFE33600ACCF30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		B3AD9FFC1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		B3B60B7C1DBB39E200987943 /* HWIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWIconView.h; sourceTree = "<group>"; };
+		B3B60B7D1DBB39E200987943 /* HWIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWIconView.m; sourceTree = "<group>"; };
 		B3DC58F71DB8EEF2003ACCDD /* HWStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusPhotosView.h; sourceTree = "<group>"; };
 		B3DC58F81DB8EEF2003ACCDD /* HWStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStatusPhotosView.m; sourceTree = "<group>"; };
 		B3DC58FA1DB906A5003ACCDD /* HWStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusPhotoView.h; sourceTree = "<group>"; };
@@ -534,6 +537,8 @@
 				B392D7581DB0D54100187E84 /* HWDropdownMenu.m */,
 				B392D7601DB10FC300187E84 /* HWTabBar.h */,
 				B392D7611DB10FC300187E84 /* HWTabBar.m */,
+				B3B60B7C1DBB39E200987943 /* HWIconView.h */,
+				B3B60B7D1DBB39E200987943 /* HWIconView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -923,6 +928,7 @@
 				B3AD9FFA1DAFDF9D00ACCF30 /* HWItemTool.m in Sources */,
 				B3491CF31DB49DB2004F8BF6 /* UIImage+GIF.m in Sources */,
 				B3491CF01DB49DB2004F8BF6 /* SDWebImageManager.m in Sources */,
+				B3B60B7E1DBB39E200987943 /* HWIconView.m in Sources */,
 				B3AD9FEC1DAFD9D600ACCF30 /* HWNavigationController.m in Sources */,
 				B36229531DB706DB0026A449 /* HWPhoto.m in Sources */,
 				B3016B701DB24CC400433AC5 /* HWNewfeatureViewController.m in Sources */,

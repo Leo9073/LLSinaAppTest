@@ -21,7 +21,7 @@
     CGFloat cellW = [UIScreen mainScreen].bounds.size.width;
     
     /** 头像图标 */
-    CGFloat iconWH = 35;
+    CGFloat iconWH = 40;
     CGFloat iconX = HWStatusCellBorderW;
     CGFloat iconY = HWStatusCellBorderW;
     self.iconViewF = CGRectMake(iconX, iconY, iconWH, iconWH);
