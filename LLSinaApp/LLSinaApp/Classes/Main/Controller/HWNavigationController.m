@@ -48,7 +48,6 @@
  *  重写这个方法的目的：能够拦截所有push进来的控制器
  *
  *  @param viewController 即将push进来的控制器
- *  @param animated       <#animated description#>
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
