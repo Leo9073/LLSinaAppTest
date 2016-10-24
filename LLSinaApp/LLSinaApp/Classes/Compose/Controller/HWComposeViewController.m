@@ -11,9 +11,12 @@
 #import "HWTextView.h"
 #import "AFNetworking.h"
 #import "HWComposeToolbar.h"
+#import "HWComposePhotosView.h"
 
-@interface HWComposeViewController ()
+@interface HWComposeViewController () <UITextViewDelegate,HWComposeToolbarDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak,nonatomic) UITextView *textView;
+@property (weak,nonatomic) HWComposeToolbar *toolbar;
+@property (weak,nonatomic) HWComposePhotosView *photosView;
 @end
 
 @implementation HWComposeViewController
@@ -32,6 +35,9 @@
     
     //设置工具条
     [self setupToolbar];
+    
+    //设置工具条
+    [self setupPhotosView];
 }
 
 /**
@@ -45,14 +51,31 @@
 #pragma mark -- 初始化方法
 
 /**
+ *  添加相册图片
+ */
+- (void)setupPhotosView {
+    
+    HWComposePhotosView *photosView = [[HWComposePhotosView alloc] init];
+    photosView.width = self.view.width;
+    photosView.height = self.view.height; //可以随便写
+    photosView.y = 100;
+    [self.textView addSubview:photosView];
+    self.photosView = photosView;
+}
+
+/**
  *  设置工具条
  */
 - (void)setupToolbar {
     
     HWComposeToolbar *toolbar = [[HWComposeToolbar alloc] init];
-    toolbar.width = self.view.bounds.size.width;
+    toolbar.width = self.view.width;
     toolbar.height = 44;
-    self.textView.inputAccessoryView = toolbar;
+    toolbar.y = self.view.height - toolbar.height;
+    toolbar.delegate = self;
+    [self.view addSubview:toolbar];
+    self.toolbar = toolbar;
+    
 }
 
 /**
@@ -65,11 +88,18 @@
     textView.alwaysBounceVertical = YES;
     textView.font = [UIFont systemFontOfSize:15];
     textView.placeholder = @"分享新鲜事...";
+    textView.delegate = self;
     [self.view addSubview:textView];
     self.textView = textView;
     
-    //监听通知
+    //成为第一响应者（能输入文本的空间一旦成为第一响应者，就会叫出相应的键盘）
+    [textView becomeFirstResponder];
+    
+    //监听文字改变通知
     [HWNotificationCenter addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:textView];
+    
+    //监听键盘通知
+    [HWNotificationCenter addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
 /**
@@ -108,6 +138,34 @@
 }
 
 #pragma mark -- 监听方法
+
+/**
+ *  键盘的frame发生改变时调用
+ */
+- (void)keyboardWillChangeFrame:(NSNotification *)notification {
+    
+    /**
+     键盘弹出\隐藏动画的执行节奏(先快后慢，匀速)
+     UIKeyboardAnimationCurveUserInfoKey = 7;
+     键盘弹出\隐藏所耗费的时间
+     UIKeyboardAnimationDurationUserInfoKey = "0.25";
+     键盘弹出\隐藏后的frame
+     UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 409}, {375, 258}}";
+     */
+    
+    NSDictionary *userinfo = notification.userInfo;
+    //动画持续时间
+    double duration = [userinfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    //键盘的frame
+    CGRect keyboardF = [userinfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    //设置动画
+    [UIView animateWithDuration:duration animations:^{
+        self.toolbar.y = keyboardF.origin.y - self.toolbar.height;
+    }];
+    
+}
+
 - (void)cancel {
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -149,5 +207,84 @@
     self.navigationItem.rightBarButtonItem.enabled = self.textView.hasText;
 }
 
+#pragma mark -- UITextViewDelegate代理方法
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+    [self.view endEditing:YES];
+}
+
+#pragma mark -- HWComposeToolbarDelegate代理方法
+
+- (void)composeToolbar:(HWComposeToolbar *)toolbar didClickButton:(HWComposeToolbarButtonType)buttonType {
+    
+    switch (buttonType) {
+        case HWComposeToolbarButtonTypeCamera: //拍照
+            [self openCamera];
+            break;
+        case HWComposeToolbarButtonTypePicture: //相册
+            [self openAlbum];
+            break;
+        case HWComposeToolbarButtonTypeMention: //@
+            
+            break;
+        case HWComposeToolbarButtonTypeTrend: //#
+            
+            break;
+        case HWComposeToolbarButtonTypeEmotion: //表情
+            
+            break;
+            
+        default:
+            break;
+    }
+}
+
+#pragma mark -- 其他方法
+/**
+ *  打开相机
+ */
+- (void)openCamera {
+    
+    [self openImagePickerController:UIImagePickerControllerSourceTypeCamera];
+}
+
+/**
+ *  打开相册
+ */
+- (void)openAlbum {
+    
+    [self openImagePickerController:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+- (void)openImagePickerController:(UIImagePickerControllerSourceType)type {
+    
+    if (![UIImagePickerController isSourceTypeAvailable:type]) return;
+    
+    //设置要选择的是相机还是相册
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType = type;
+    ipc.delegate = self;
+    [self presentViewController:ipc animated:YES completion:nil];
+}
+
+#pragma mark -- UIImagePickerControllerDelegate代理方法
+/**
+ *  从UIImagePickerController选择完图片后调用
+ */
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    //info中就包含了选择的图片
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    //添加图片到photosView中
+    [self.photosView addPhoto:image];
+    
+    
+    
+    
+    
+}
 
 @end

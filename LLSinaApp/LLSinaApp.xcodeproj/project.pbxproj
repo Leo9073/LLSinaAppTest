@@ -19,6 +19,7 @@
 		B3016B911DB2796D00433AC5 /* HWAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B3016B901DB2796D00433AC5 /* HWAccountTool.m */; };
 		B3016B941DB289C000433AC5 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3016B931DB289C000433AC5 /* UIWindow+Extension.m */; };
 		B3016B9A1DB29F9300433AC5 /* HWTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3016B991DB29F9300433AC5 /* HWTitleButton.m */; };
+		B30AB9781DBE4F3700FF9BCB /* HWComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = B30AB9771DBE4F3700FF9BCB /* HWComposePhotosView.m */; };
 		B3491CE91DB49DB2004F8BF6 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B3491CC91DB49DB2004F8BF6 /* MKAnnotationView+WebCache.m */; };
 		B3491CEA1DB49DB2004F8BF6 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = B3491CCB1DB49DB2004F8BF6 /* NSData+ImageContentType.m */; };
 		B3491CEB1DB49DB2004F8BF6 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B3491CCD1DB49DB2004F8BF6 /* SDImageCache.m */; };
@@ -124,6 +125,8 @@
 		B3016B931DB289C000433AC5 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		B3016B981DB29F9300433AC5 /* HWTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTitleButton.h; sourceTree = "<group>"; };
 		B3016B991DB29F9300433AC5 /* HWTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTitleButton.m; sourceTree = "<group>"; };
+		B30AB9761DBE4F3700FF9BCB /* HWComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWComposePhotosView.h; sourceTree = "<group>"; };
+		B30AB9771DBE4F3700FF9BCB /* HWComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWComposePhotosView.m; sourceTree = "<group>"; };
 		B3491CC81DB49DB2004F8BF6 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		B3491CC91DB49DB2004F8BF6 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		B3491CCA1DB49DB2004F8BF6 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -661,6 +664,8 @@
 			children = (
 				B3BD19981DBC9DD400C566D3 /* HWComposeToolbar.h */,
 				B3BD19991DBC9DD400C566D3 /* HWComposeToolbar.m */,
+				B30AB9761DBE4F3700FF9BCB /* HWComposePhotosView.h */,
+				B30AB9771DBE4F3700FF9BCB /* HWComposePhotosView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -996,6 +1001,7 @@
 				B392D7591DB0D54100187E84 /* HWDropdownMenu.m in Sources */,
 				B3491CEA1DB49DB2004F8BF6 /* NSData+ImageContentType.m in Sources */,
 				B392D7621DB10FC300187E84 /* HWTabBar.m in Sources */,
+				B30AB9781DBE4F3700FF9BCB /* HWComposePhotosView.m in Sources */,
 				B3AD9FF01DAFD9D600ACCF30 /* HWMessageCenterViewController.m in Sources */,
 				B3DC58FC1DB906A5003ACCDD /* HWStatusPhotoView.m in Sources */,
 				B3AD9FF11DAFD9D600ACCF30 /* HWProfileViewController.m in Sources */,
