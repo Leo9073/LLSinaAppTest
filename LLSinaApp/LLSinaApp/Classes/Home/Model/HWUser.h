@@ -25,7 +25,7 @@ typedef enum {
 /** name	string	友好显示名称 */
 @property (copy,nonatomic) NSString *name;
 
-/** profile_image_url	string	用户头像地址（中图），50×50像素 */
+/** profile_image_url:用户头像地址（中图），50×50像素 */
 @property (copy,nonatomic) NSString *profile_image_url;
 
 /** 会员类型 值 > 2才代表是会员 */
@@ -34,9 +34,10 @@ typedef enum {
 /** 会员等级 */
 @property (assign,nonatomic) NSInteger mbrank;
 
+/** 是否是会员 */
 @property (assign,nonatomic, getter=isVip) BOOL vip;
 
-/** 会员等级 */
+/** 会员类型 */
 @property (assign,nonatomic) HWUserVerifiedType verified_type;
 
 @end

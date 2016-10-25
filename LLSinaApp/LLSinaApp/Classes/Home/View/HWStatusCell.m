@@ -7,7 +7,6 @@
 //
 
 #import "HWStatusCell.h"
-#import "UIImageView+WebCache.h"
 #import "HWPhoto.h"
 #import "HWStatusToolbar.h"
 #import "HWStatusFrame.h"
@@ -51,12 +50,6 @@
 
 /** 工具条 */
 @property (weak,nonatomic) HWStatusToolbar *toobar;
-
-/** 转发微博正文+昵称 */
-//@property (weak,nonatomic) UILabel *retweetContentLabel;
-
-/** 转发微博配图 */
-//@property (weak,nonatomic) UIImageView *retweetPhotoView;
 
 @end
 
