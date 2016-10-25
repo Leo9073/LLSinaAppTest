@@ -4,5 +4,4 @@ platform :ios, "7.0"
 
 target :LLSinaApp do
 pod 'MJExtension'
-pod 'MBProgressHUD'
 end
