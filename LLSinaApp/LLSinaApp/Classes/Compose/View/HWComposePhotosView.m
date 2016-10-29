@@ -10,11 +10,23 @@
 
 @implementation HWComposePhotosView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _photos = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (void)addPhoto:(UIImage *)photo {
     
     UIImageView *photoView = [[UIImageView alloc] init];
     photoView.image = photo;
     [self addSubview:photoView];
+    
+    //存储图片
+    [self.photos addObject:photo];
 }
 
 - (void)layoutSubviews {

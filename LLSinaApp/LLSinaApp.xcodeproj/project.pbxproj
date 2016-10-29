@@ -73,6 +73,9 @@
 		B3BD199A1DBC9DD400C566D3 /* HWComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BD19991DBC9DD400C566D3 /* HWComposeToolbar.m */; };
 		B3DC58F91DB8EEF2003ACCDD /* HWStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC58F81DB8EEF2003ACCDD /* HWStatusPhotosView.m */; };
 		B3DC58FC1DB906A5003ACCDD /* HWStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC58FB1DB906A5003ACCDD /* HWStatusPhotoView.m */; };
+		B3F9A2F71DC47AE00006EF6C /* HWEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F9A2F61DC47AE00006EF6C /* HWEmotionKeyboard.m */; };
+		B3F9A2FA1DC47D100006EF6C /* HWEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F9A2F91DC47D100006EF6C /* HWEmotionListView.m */; };
+		B3F9A2FD1DC47D560006EF6C /* HWEmotionTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F9A2FC1DC47D560006EF6C /* HWEmotionTabBar.m */; };
 		B3FF4F631DAE61470083809C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FF4F621DAE61470083809C /* Assets.xcassets */; };
 		B3FF4F661DAE61470083809C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FF4F641DAE61470083809C /* LaunchScreen.storyboard */; };
 		B3FF4F711DAE61470083809C /* LLSinaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF4F701DAE61470083809C /* LLSinaAppTests.m */; };
@@ -229,6 +232,12 @@
 		B3DC58F81DB8EEF2003ACCDD /* HWStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStatusPhotosView.m; sourceTree = "<group>"; };
 		B3DC58FA1DB906A5003ACCDD /* HWStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStatusPhotoView.h; sourceTree = "<group>"; };
 		B3DC58FB1DB906A5003ACCDD /* HWStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStatusPhotoView.m; sourceTree = "<group>"; };
+		B3F9A2F51DC47AE00006EF6C /* HWEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWEmotionKeyboard.h; sourceTree = "<group>"; };
+		B3F9A2F61DC47AE00006EF6C /* HWEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWEmotionKeyboard.m; sourceTree = "<group>"; };
+		B3F9A2F81DC47D100006EF6C /* HWEmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWEmotionListView.h; sourceTree = "<group>"; };
+		B3F9A2F91DC47D100006EF6C /* HWEmotionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWEmotionListView.m; sourceTree = "<group>"; };
+		B3F9A2FB1DC47D560006EF6C /* HWEmotionTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWEmotionTabBar.h; sourceTree = "<group>"; };
+		B3F9A2FC1DC47D560006EF6C /* HWEmotionTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWEmotionTabBar.m; sourceTree = "<group>"; };
 		B3FF4F531DAE61470083809C /* LLSinaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLSinaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF4F621DAE61470083809C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3FF4F651DAE61470083809C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -666,6 +675,12 @@
 				B3BD19991DBC9DD400C566D3 /* HWComposeToolbar.m */,
 				B30AB9761DBE4F3700FF9BCB /* HWComposePhotosView.h */,
 				B30AB9771DBE4F3700FF9BCB /* HWComposePhotosView.m */,
+				B3F9A2F51DC47AE00006EF6C /* HWEmotionKeyboard.h */,
+				B3F9A2F61DC47AE00006EF6C /* HWEmotionKeyboard.m */,
+				B3F9A2F81DC47D100006EF6C /* HWEmotionListView.h */,
+				B3F9A2F91DC47D100006EF6C /* HWEmotionListView.m */,
+				B3F9A2FB1DC47D560006EF6C /* HWEmotionTabBar.h */,
+				B3F9A2FC1DC47D560006EF6C /* HWEmotionTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -936,7 +951,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -961,6 +976,7 @@
 				B3016B941DB289C000433AC5 /* UIWindow+Extension.m in Sources */,
 				B3AD9FEA1DAFD9D600ACCF30 /* HWHomeViewController.m in Sources */,
 				B37E786E1DB64F3100C4160E /* HWStatusFrame.m in Sources */,
+				B3F9A2F71DC47AE00006EF6C /* HWEmotionKeyboard.m in Sources */,
 				B3491CFB1DB4A051004F8BF6 /* HWUser.m in Sources */,
 				B3491CF51DB49DB2004F8BF6 /* UIImage+WebP.m in Sources */,
 				B3491CED1DB49DB2004F8BF6 /* SDWebImageDecoder.m in Sources */,
@@ -976,12 +992,14 @@
 				B3491CF01DB49DB2004F8BF6 /* SDWebImageManager.m in Sources */,
 				B3B60B7E1DBB39E200987943 /* HWIconView.m in Sources */,
 				B3AD9FEC1DAFD9D600ACCF30 /* HWNavigationController.m in Sources */,
+				B3F9A2FA1DC47D100006EF6C /* HWEmotionListView.m in Sources */,
 				B36229531DB706DB0026A449 /* HWPhoto.m in Sources */,
 				B3016B701DB24CC400433AC5 /* HWNewfeatureViewController.m in Sources */,
 				B3491CFE1DB4A06E004F8BF6 /* HWStatus.m in Sources */,
 				B3AD9FEF1DAFD9D600ACCF30 /* main.m in Sources */,
 				B3016B891DB2594800433AC5 /* AFURLSessionManager.m in Sources */,
 				B392D7561DB0C41C00187E84 /* HWSearchBar.m in Sources */,
+				B3F9A2FD1DC47D560006EF6C /* HWEmotionTabBar.m in Sources */,
 				B3AD9FFD1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m in Sources */,
 				B3016B841DB2594800433AC5 /* AFHTTPSessionManager.m in Sources */,
 				B3491D011DB4E541004F8BF6 /* HWLoadMoreFooter.m in Sources */,

@@ -12,14 +12,36 @@
 #import "AFNetworking.h"
 #import "HWComposeToolbar.h"
 #import "HWComposePhotosView.h"
+#import <SVProgressHUD.h>
+#import "HWEmotionKeyboard.h"
 
 @interface HWComposeViewController () <UITextViewDelegate,HWComposeToolbarDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+/** 输入控件 */
 @property (weak,nonatomic) UITextView *textView;
+/** 键盘顶部工具条 */
 @property (weak,nonatomic) HWComposeToolbar *toolbar;
+/** 相册(存放拍照或者相册中选择的图片) */
 @property (weak,nonatomic) HWComposePhotosView *photosView;
+/** 表情键盘 */
+@property (strong,nonatomic) HWEmotionKeyboard *emotionKeyboard;
+/** 是否正在切换键盘 */
+@property (assign,nonatomic) BOOL switchingKeyboard;
 @end
 
 @implementation HWComposeViewController
+
+#pragma mark -- 懒加载
+
+- (HWEmotionKeyboard *)emotionKeyboard {
+    
+    if (!_emotionKeyboard) {
+        self.emotionKeyboard = [[HWEmotionKeyboard alloc] init];
+        self.emotionKeyboard.width = self.view.width;
+        self.emotionKeyboard.height = 258;
+    }
+    return _emotionKeyboard;
+}
+
 
 #pragma mark -- 系统方法
 - (void)viewDidLoad {
@@ -38,6 +60,7 @@
     
     //设置工具条
     [self setupPhotosView];
+    
 }
 
 /**
@@ -100,6 +123,7 @@
     
     //监听键盘通知
     [HWNotificationCenter addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
 }
 
 /**
@@ -153,6 +177,7 @@
      UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 409}, {375, 258}}";
      */
     
+    if (self.switchingKeyboard) return;
     NSDictionary *userinfo = notification.userInfo;
     //动画持续时间
     double duration = [userinfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
@@ -161,9 +186,12 @@
     
     //设置动画
     [UIView animateWithDuration:duration animations:^{
-        self.toolbar.y = keyboardF.origin.y - self.toolbar.height;
+        if (keyboardF.origin.y > self.view.height) { //键盘的Y值已经远远超过控制器view的高度
+            self.toolbar.y = self.view.height - self.toolbar.height;
+        } else {
+            self.toolbar.y = keyboardF.origin.y - self.toolbar.height;
+        }
     }];
-    
 }
 
 - (void)cancel {
@@ -173,10 +201,46 @@
 
 - (void)send {
     
-    // URL:https://api.weibo.com/2/statuses/update.json
-    // access_token:采用OAuth授权方式为必填参数，OAuth授权后获得。(true)
-    // status:发布的微博文本内容，必须做URLencode，内容不超过140个汉字。(true)
-    // pic:要上传的图片，仅支持JPEG、GIF、PNG格式，图片大小小于5M。(二进制数据)(false)
+    if (self.photosView.photos.count) {
+        
+        [self sendWithImage];
+    } else {
+        [self sendWithoutImage];
+    }
+}
+
+/**
+ *  发布有图片的微博
+ */
+- (void)sendWithImage {
+    
+    //1.请求管理者
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    //2.拼接参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [HWAccountTool account].access_token;
+    params[@"status"] = self.textView.text;
+    NSString *strUrl = @"https://upload.api.weibo.com/2/statuses/upload.json";
+    
+    [manager POST:strUrl parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        UIImage *image = [self.photosView.photos firstObject];
+        NSData *data = UIImageJPEGRepresentation(image, 1.0);
+        [formData appendPartWithFileData:data name:@"pic" fileName:@"test.jpg" mimeType:@"image/jpeg"];
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [SVProgressHUD showSuccessWithStatus:@"发送成功"];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showErrorWithStatus:@"发送失败"];
+    }];
+    //发送成功控制器消失
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/**
+ *  发布没有图片的微博
+ */
+- (void)sendWithoutImage {
+    
     //1.请求管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -188,16 +252,14 @@
     
     //3.发送请求
     [manager POST:strUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
-        
-        
+        [SVProgressHUD showSuccessWithStatus:@"发送成功"];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        HWLog(@"请求失败---->%@",error);
+        [SVProgressHUD showErrorWithStatus:@"发送失败"];
     }];
-    
     //发送成功控制器消失
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 /**
  *  监听文字改变
@@ -231,7 +293,7 @@
             
             break;
         case HWComposeToolbarButtonTypeEmotion: //表情
-            
+            [self switchKeyboard];
             break;
             
         default:
@@ -240,6 +302,39 @@
 }
 
 #pragma mark -- 其他方法
+
+/**
+ *  切换键盘
+ */
+- (void)switchKeyboard {
+    
+    //self.textView.inputView = nil 说明使用的是系统自带键盘
+    if (self.textView.inputView == nil) {  //切换为自定义键盘
+        self.textView.inputView = self.emotionKeyboard;
+        
+        //显示键盘图标
+        self.toolbar.showKeyboardButton = YES;
+    } else {  //切换为系统键盘
+        self.textView.inputView = nil;
+        //显示表情图标
+        self.toolbar.showKeyboardButton = NO;
+    }
+    
+    //开始切换键盘
+    self.switchingKeyboard = YES;
+    
+    //键盘退出
+    [self.textView endEditing:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //弹出键盘
+        [self.textView becomeFirstResponder];
+    });
+    
+    //结束切换
+    self.switchingKeyboard = NO;
+}
+
+
 /**
  *  打开相机
  */
@@ -280,9 +375,6 @@
     
     //添加图片到photosView中
     [self.photosView addPhoto:image];
-    
-    
-    
     
     
 }
