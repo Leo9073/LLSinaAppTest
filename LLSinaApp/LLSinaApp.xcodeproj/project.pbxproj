@@ -20,6 +20,7 @@
 		B3016B941DB289C000433AC5 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3016B931DB289C000433AC5 /* UIWindow+Extension.m */; };
 		B3016B9A1DB29F9300433AC5 /* HWTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3016B991DB29F9300433AC5 /* HWTitleButton.m */; };
 		B30AB9781DBE4F3700FF9BCB /* HWComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = B30AB9771DBE4F3700FF9BCB /* HWComposePhotosView.m */; };
+		B30C9FF21DD2F15300C21615 /* HWEmotionTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B30C9FF11DD2F15200C21615 /* HWEmotionTabBarButton.m */; };
 		B3491CE91DB49DB2004F8BF6 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B3491CC91DB49DB2004F8BF6 /* MKAnnotationView+WebCache.m */; };
 		B3491CEA1DB49DB2004F8BF6 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = B3491CCB1DB49DB2004F8BF6 /* NSData+ImageContentType.m */; };
 		B3491CEB1DB49DB2004F8BF6 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B3491CCD1DB49DB2004F8BF6 /* SDImageCache.m */; };
@@ -130,6 +131,8 @@
 		B3016B991DB29F9300433AC5 /* HWTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTitleButton.m; sourceTree = "<group>"; };
 		B30AB9761DBE4F3700FF9BCB /* HWComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWComposePhotosView.h; sourceTree = "<group>"; };
 		B30AB9771DBE4F3700FF9BCB /* HWComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWComposePhotosView.m; sourceTree = "<group>"; };
+		B30C9FF01DD2F15200C21615 /* HWEmotionTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWEmotionTabBarButton.h; sourceTree = "<group>"; };
+		B30C9FF11DD2F15200C21615 /* HWEmotionTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWEmotionTabBarButton.m; sourceTree = "<group>"; };
 		B3491CC81DB49DB2004F8BF6 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		B3491CC91DB49DB2004F8BF6 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		B3491CCA1DB49DB2004F8BF6 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -681,6 +684,8 @@
 				B3F9A2F91DC47D100006EF6C /* HWEmotionListView.m */,
 				B3F9A2FB1DC47D560006EF6C /* HWEmotionTabBar.h */,
 				B3F9A2FC1DC47D560006EF6C /* HWEmotionTabBar.m */,
+				B30C9FF01DD2F15200C21615 /* HWEmotionTabBarButton.h */,
+				B30C9FF11DD2F15200C21615 /* HWEmotionTabBarButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -999,6 +1004,7 @@
 				B3AD9FEF1DAFD9D600ACCF30 /* main.m in Sources */,
 				B3016B891DB2594800433AC5 /* AFURLSessionManager.m in Sources */,
 				B392D7561DB0C41C00187E84 /* HWSearchBar.m in Sources */,
+				B30C9FF21DD2F15300C21615 /* HWEmotionTabBarButton.m in Sources */,
 				B3F9A2FD1DC47D560006EF6C /* HWEmotionTabBar.m in Sources */,
 				B3AD9FFD1DAFE33600ACCF30 /* UIBarButtonItem+Extension.m in Sources */,
 				B3016B841DB2594800433AC5 /* AFHTTPSessionManager.m in Sources */,
